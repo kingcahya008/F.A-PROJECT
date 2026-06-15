@@ -1,7 +1,7 @@
 const CACHE = 'mcfa-v3';
 const FILES = [
   './',
-  './MCFA_PROJECT.html',
+  './FA_PROJECT.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'
@@ -33,7 +33,7 @@ self.addEventListener('fetch', e => {
         if (res && res.ok) cache.put(e.request, res.clone());
         return res;
       }).catch(() =>
-        cache.match(e.request).then(r => r || cache.match('./MCFA_PROJECT.html'))
+        cache.match(e.request).then(r => r || cache.match('./FA_PROJECT.html'))
       )
     )
   );
