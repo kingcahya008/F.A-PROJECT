@@ -6,7 +6,7 @@
 const CACHE_NAME = 'M.C.F.A';
 const STATIC_ASSETS = [
   './',
-  './M.C.F.A.html',
+  './MCFA.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'
@@ -72,9 +72,9 @@ self.addEventListener('fetch', event => {
         caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
         return res;
       }).catch(() => {
-        // Offline fallback — tampilkan M.C.F.A.html
+        // Offline fallback — tampilkan MCFA.html
         if (event.request.destination === 'document') {
-          return caches.match('./M.C.F.A.html');
+          return caches.match('./MCFA.html');
         }
       });
     })
